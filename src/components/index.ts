@@ -1,0 +1,14 @@
+export { default as CustomCursor } from "./CustomCursor";
+export { default as Preloader } from "./Preloader";
+export { default as SmoothScroll } from "./SmoothScroll";
+export { default as Navbar } from "./Navbar";
+export { default as Hero } from "./Hero";
+export { default as About } from "./About";
+export { default as Experience } from "./Experience";
+export { default as Projects } from "./Projects";
+export { default as Research } from "./Research";
+export { default as Contact } from "./Contact";
+export { default as Footer } from "./Footer";
+export { default as Scene3D } from "./Scene3D";
+export { default as Magnetic } from "./Magnetic";
+export { default as TextReveal } from "./TextReveal";

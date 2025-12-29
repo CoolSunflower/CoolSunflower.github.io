@@ -96,7 +96,7 @@ export default function Hero() {
         className="relative z-10 container-custom text-center"
       >
         {/* Badge */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.3, duration: 0.6 }}
@@ -106,7 +106,7 @@ export default function Hero() {
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             Available for opportunities
           </span>
-        </motion.div>
+        </motion.div> */}
 
         {/* Main Title */}
         <div ref={textRef} className="mb-6 perspective-1000">
@@ -145,7 +145,7 @@ export default function Hero() {
         </motion.p>
 
         {/* CTA Buttons */}
-        <div className="hero-cta flex flex-col sm:flex-row items-center justify-center gap-4">
+        {/* <div className="hero-cta flex flex-col sm:flex-row items-center justify-center gap-4">
           <motion.a
             href="#projects"
             className="magnetic-btn"
@@ -183,7 +183,7 @@ export default function Hero() {
             </svg>
             View GitHub
           </motion.a>
-        </div>
+        </div> */}
       </motion.div>
 
       {/* Scroll Indicator */}

@@ -4,6 +4,8 @@ import dynamic from "next/dynamic";
 import Preloader from "@/components/Preloader";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
+import ScrollProgress from "@/components/ScrollProgress";
+import BackToTop from "@/components/BackToTop";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -26,6 +28,12 @@ export default function Home() {
 
       {/* Custom Cursor */}
       <CustomCursor />
+
+      {/* Scroll Progress Indicator */}
+      <ScrollProgress />
+
+      {/* Back to Top Button */}
+      <BackToTop />
 
       {/* Grain Texture Overlay */}
       <div className="grain" />
