@@ -137,11 +137,10 @@ export default function Hero() {
         </div>
 
         {/* Subtitle */}
-        <motion.p className="hero-subtitle text-body-large text-white/60 max-w-2xl mx-auto mb-12">
-          Full-stack engineer building at the intersection of{" "}
+        <motion.p className="hero-subtitle text-body-large text-white/60 max-w-xl mx-auto mb-8">
+          Full-stack engineer & Applied AI Researcher building at the intersection of{" "}
           <span className="text-[#00f0ff]">systems</span> and{" "}
-          <span className="text-[#ff6b35]">scale</span>. From embedded sensors
-          to cloud-scale microservices — I ship code that matters.
+          <span className="text-[#ff6b35]">scale</span>.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -186,7 +185,7 @@ export default function Hero() {
         </div> */}
       </motion.div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator
       <motion.div
         className="scroll-indicator absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
         animate={{ y: [0, 10, 0] }}
@@ -196,7 +195,9 @@ export default function Hero() {
           <span className="text-xs uppercase tracking-widest">Scroll</span>
           <div className="w-px h-12 bg-gradient-to-b from-white/40 to-transparent" />
         </div>
-      </motion.div>
+      </motion.div> */}
+
+      {/* Scroll Indicator */}
 
       {/* Tech Marquee */}
       <div className="absolute bottom-0 left-0 right-0 z-10 py-6 border-t border-white/5">

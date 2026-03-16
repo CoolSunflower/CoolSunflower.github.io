@@ -1,58 +1,16 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { stats, education } from "@/lib/data";
+import { education } from "@/lib/data";
 
 gsap.registerPlugin(ScrollTrigger);
-
-function Counter({
-  value,
-  suffix,
-  inView,
-}: {
-  value: number;
-  suffix: string;
-  inView: boolean;
-}) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (inView) {
-      const duration = 2000;
-      const steps = 60;
-      const increment = value / steps;
-      let current = 0;
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= value) {
-          setCount(value);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(current * 100) / 100);
-        }
-      }, duration / steps);
-
-      return () => clearInterval(timer);
-    }
-  }, [inView, value]);
-
-  return (
-    <span className="counter">
-      {typeof count === "number" && count % 1 !== 0
-        ? count.toFixed(2)
-        : Math.floor(count)}
-      {suffix}
-    </span>
-  );
-}
 
 export default function About() {
   const containerRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: true, amount: 0.3 });
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -97,10 +55,10 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-20"
+          className="mb-12"
         >
-          <span className="text-[#00f0ff] text-sm font-mono mb-4 block">
-            01 — About
+          <span className="text-[#00f0ff] text-sm font-mono mb-3 block">
+            01: About
           </span>
           <h2 className="text-display">
             Building the{" "}
@@ -108,37 +66,30 @@ export default function About() {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left: About Text */}
+        <div className="max-w-4xl">
           <div ref={textRef} className="space-y-6">
             <div className="overflow-hidden">
               <p className="about-text-line text-body-large text-white/70">
-                I&apos;m a Computer Science student at{" "}
-                <span className="text-white font-medium">
-                  IIT Guwahati
-                </span>{" "}
-                with a passion for building systems that scale. My journey spans
-                from low-level C compilers to cloud-native microservices.
+                I&apos;m Adarsh Gupta, a Computer Science undergraduate at the Indian
+                Institute of Technology Guwahati with a strong interest in
+                building scalable systems and applied AI. I enjoy working across
+                the stack, from high-performance backend services and
+                distributed systems to data-driven products and machine learning
+                pipelines. During my internships at Uber, I shipped production
+                features across multiple microservices and built tools that
+                significantly improved system performance and operational
+                efficiency.
               </p>
             </div>
 
             <div className="overflow-hidden">
               <p className="about-text-line text-body-large text-white/70">
-                At{" "}
-                <span className="text-white font-medium">Uber</span>, I shipped{" "}
-                <span className="text-[#00f0ff]">54 production diffs</span>{" "}
-                across 5 microservices, accelerating queries by{" "}
-                <span className="text-[#ff6b35]">27x</span> and reducing
-                on-call workload by <span className="text-[#ff6b35]">30%</span>.
-              </p>
-            </div>
-
-            <div className="overflow-hidden">
-              <p className="about-text-line text-body-large text-white/70">
-                Beyond engineering, I&apos;ve led a{" "}
-                <span className="text-white font-medium">60-member team</span>{" "}
-                to deliver production systems and published research at IEEE
-                and ASME conferences spanning ML, GNNs, and formal verification.
+                Beyond industry work, I&apos;ve contributed to research and
+                engineering projects spanning graph neural networks, embedded
+                sensing systems, compilers, and real-time infrastructure. I&apos;m
+                particularly interested in solving complex systems problems and
+                building technology that is both performant and practical at
+                scale.
               </p>
             </div>
 
@@ -148,7 +99,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="mt-10 p-6 glass rounded-2xl"
+              className="mt-6 p-5 glass rounded-xl"
             >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00f0ff]/20 to-[#ff6b35]/20 flex items-center justify-center flex-shrink-0">
@@ -193,32 +144,6 @@ export default function About() {
                 </div>
               </div>
             </motion.div>
-          </div>
-
-          {/* Right: Stats */}
-          <div className="grid grid-cols-2 gap-6">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="p-8 glass rounded-2xl group hover:border-[#00f0ff]/30 transition-all duration-500"
-                data-cursor-hover
-              >
-                <div className="text-5xl md:text-6xl font-bold mb-2 gradient-text">
-                  <Counter
-                    value={stat.value}
-                    suffix={stat.suffix}
-                    inView={isInView}
-                  />
-                </div>
-                <p className="text-white/50 text-sm uppercase tracking-wider">
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </div>

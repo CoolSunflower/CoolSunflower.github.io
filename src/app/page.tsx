@@ -27,7 +27,7 @@ export default function Home() {
       <Preloader />
 
       {/* Custom Cursor */}
-      <CustomCursor />
+      {/* <CustomCursor /> */}
 
       {/* Scroll Progress Indicator */}
       <ScrollProgress />
@@ -39,7 +39,7 @@ export default function Home() {
       <div className="grain" />
 
       {/* Smooth Scroll Wrapper */}
-      <SmoothScroll>
+      {/* <SmoothScroll> */}
         {/* Navigation */}
         <Navbar />
 
@@ -66,7 +66,7 @@ export default function Home() {
 
         {/* Footer */}
         <Footer />
-      </SmoothScroll>
+      {/* </SmoothScroll> */}
     </>
   );
 }

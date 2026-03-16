@@ -55,12 +55,12 @@ export default function Research() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-20"
+          className="mb-12"
         >
-          <span className="text-[#00f0ff] text-sm font-mono mb-4 block">
-            04 — Research
+          <span className="text-[#00f0ff] text-sm font-mono mb-3 block">
+            04: Research
           </span>
-          <h2 className="text-display mb-6">
+          <h2 className="text-display mb-4">
             Publications & <span className="gradient-text">Research</span>
           </h2>
           <p className="text-white/60 text-body-large max-w-2xl">
@@ -70,13 +70,13 @@ export default function Research() {
         </motion.div>
 
         {/* Publications */}
-        <div className="mb-20">
+        <div className="mb-12">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold mb-8 flex items-center gap-3"
+            className="text-xl font-bold mb-6 flex items-center gap-3"
           >
             <span className="w-2 h-2 rounded-full bg-[#00f0ff]" />
             Publications
@@ -154,26 +154,27 @@ export default function Research() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold mb-8 flex items-center gap-3"
+            className="text-xl font-bold mb-6 flex items-center gap-3"
           >
             <span className="w-2 h-2 rounded-full bg-[#ff6b35]" />
             Research Experience
           </motion.h3>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="space-y-4">
             {research.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="p-6 glass rounded-2xl group hover:border-[#ff6b35]/30 transition-all duration-500"
+                className="p-5 glass rounded-xl group hover:border-[#ff6b35]/30 transition-all duration-500"
                 data-cursor-hover
               >
-                <div className="flex items-start justify-between mb-4">
+                <div className="flex flex-col md:flex-row md:items-start gap-4">
+                  {/* Icon */}
                   <div
-                    className="w-10 h-10 rounded-lg flex items-center justify-center"
+                    className="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center"
                     style={{
                       background:
                         index === 0
@@ -205,44 +206,44 @@ export default function Research() {
                       />
                     </svg>
                   </div>
-                  <span className="text-xs text-white/40 font-mono">
-                    {item.period.split(" – ")[0]}
-                  </span>
-                </div>
 
-                <h4 className="font-semibold mb-1 group-hover:text-[#ff6b35] transition-colors">
-                  {item.institution}
-                </h4>
-                {item.lab && (
-                  <p className="text-sm text-white/50 mb-2">{item.lab}</p>
-                )}
-                {item.advisor && (
-                  <p className="text-sm text-white/50 mb-2">
-                    Advisor: {item.advisor}
-                  </p>
-                )}
-                <p className="text-sm text-white/60">{item.role}</p>
-                <div className="flex items-center gap-2 mt-3 text-xs text-white/40">
-                  <svg
-                    className="w-3 h-3"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  {item.location}
+                  {/* Content */}
+                  <div className="flex-grow min-w-0">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
+                      <h4 className="font-semibold group-hover:text-[#ff6b35] transition-colors">
+                        {item.role}
+                        <span className="text-white/40 font-normal"> @ </span>
+                        <span className="text-white/70">{item.institution}</span>
+                      </h4>
+                      <span className="text-xs text-white/40 font-mono flex-shrink-0">
+                        {item.period}
+                      </span>
+                    </div>
+                    
+                    {item.lab && (
+                      <p className="text-sm text-white/50 mb-2">{item.lab}{item.advisor && ` • Advisor: ${item.advisor}`}</p>
+                    )}
+                    
+                    {item.description && (
+                      <p className="text-sm text-white/60 mb-3 leading-relaxed">
+                        {item.description}
+                      </p>
+                    )}
+                    
+                    {/* Skills Tags */}
+                    {item.skills && item.skills.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {item.skills.map((skill: string, skillIdx: number) => (
+                          <span
+                            key={skillIdx}
+                            className="px-2 py-1 text-xs rounded-md bg-white/5 text-white/50 border border-white/10"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}

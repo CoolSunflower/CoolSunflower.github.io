@@ -13,33 +13,46 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const form = e.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+    const name = (formData.get("name") as string)?.trim() || "Unknown";
+    const subject = (formData.get("subject") as string)?.trim() || "No subject";
+    const message = (formData.get("message") as string)?.trim() || "";
+
+    const gmailUrl =
+      "https://mail.google.com/mail/?view=cm&fs=1" +
+      `&to=${encodeURIComponent(siteConfig.email)}` +
+      `&su=${encodeURIComponent(`Name: ${name} - ${subject}`)}` +
+      `&body=${encodeURIComponent(message)}`;
+
+    const popup = window.open(gmailUrl, "_blank", "noopener,noreferrer");
+    if (!popup) {
+      window.location.href = gmailUrl;
+    }
 
     setIsSubmitting(false);
     setIsSubmitted(true);
 
-    // Reset after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
       formRef.current?.reset();
-    }, 3000);
+    }, 2000);
   };
 
   return (
     <section
       id="contact"
-      className="section-padding relative overflow-hidden min-h-screen flex items-center"
+      className="section-padding relative overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#030303] to-[#030303]" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-[#00f0ff] rounded-full blur-[300px] opacity-10" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#ff6b35] rounded-full blur-[200px] opacity-10" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#00f0ff] rounded-full blur-[250px] opacity-10" />
+        <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-[#ff6b35] rounded-full blur-[150px] opacity-10" />
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text */}
           <div>
             <motion.span
@@ -47,9 +60,9 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-[#00f0ff] text-sm font-mono mb-4 block"
+              className="text-[#00f0ff] text-sm font-mono mb-3 block"
             >
-              05 — Contact
+              05: Contact
             </motion.span>
 
             <motion.h2
@@ -57,7 +70,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-display mb-6"
+              className="text-display mb-4"
             >
               Let&apos;s build something{" "}
               <span className="gradient-text">amazing</span>
@@ -71,7 +84,7 @@ export default function Contact() {
               className="text-white/60 text-body-large mb-10"
             >
               Whether you have a project in mind, want to collaborate on
-              research, or just want to say hi — my inbox is always open.
+              research, or just want to say hi, my inbox is always open.
             </motion.p>
 
             {/* Contact Info */}
@@ -189,21 +202,6 @@ export default function Contact() {
                   id="name"
                   name="name"
                   placeholder="Your Name"
-                  required
-                  className="form-input"
-                  data-cursor-hover
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="sr-only">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Your Email"
                   required
                   className="form-input"
                   data-cursor-hover

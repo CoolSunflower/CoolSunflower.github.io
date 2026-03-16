@@ -70,10 +70,10 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-20"
+          className="mb-12"
         >
-          <span className="text-[#00f0ff] text-sm font-mono mb-4 block">
-            02 — Experience
+          <span className="text-[#00f0ff] text-sm font-mono mb-3 block">
+            02: Experience
           </span>
           <h2 className="text-display">
             Where I&apos;ve made{" "}
@@ -197,7 +197,7 @@ export default function Experience() {
         </div>
 
         {/* Resume Button */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -227,7 +227,7 @@ export default function Experience() {
             </svg>
             <span>Download Resume</span>
           </motion.a>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

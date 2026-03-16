@@ -1,0 +1,44 @@
+---
+title: Router Simulation Platform
+subtitle: Network Scheduling Algorithms
+description: High-performance router simulator with 8 I/O ports, implementing Priority, WFQ, RR, and iSLIP scheduling algorithms.
+longDescription: Designed and implemented a high-performance router simulator with 8 I/O ports, integrating Priority, WFQ, RR, and iSLIP scheduling algorithms. Benchmarked under realistic workloads to assess throughput, latency, and packet loss.
+category: systems
+tech:
+  - C++
+  - Networking
+  - Algorithms
+  - Simulation
+period: Sep 2024
+featured: false
+color: "#f59e0b"
+github: https://github.com/CoolSunflower/RouterC-
+order: 5
+---
+
+## Overview
+
+A comprehensive router simulator for studying and comparing different packet scheduling algorithms under various network conditions.
+
+## Implemented Algorithms
+
+### Priority Scheduling
+Packets prioritized based on predefined rules and QoS requirements.
+
+### Weighted Fair Queuing (WFQ)
+Fair bandwidth allocation with configurable weights per flow.
+
+### Round Robin (RR)
+Simple time-sliced scheduling for baseline comparison.
+
+### iSLIP
+Advanced scheduling algorithm minimizing head-of-line (HOL) blocking.
+
+## Benchmarking Results
+
+Tested under multiple traffic patterns:
+- Uniform traffic distribution
+- Non-uniform (bursty) traffic
+- Real-world trace replay
+
+**Key Finding**: iSLIP proved most efficient for achieving fairness while minimizing HOL blocking.

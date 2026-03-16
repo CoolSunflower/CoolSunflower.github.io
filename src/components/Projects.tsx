@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRouter } from "next/navigation";
 import { projects } from "@/lib/data";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,6 +19,7 @@ const categories = [
 
 export default function Projects() {
   const containerRef = useRef<HTMLElement>(null);
+  const router = useRouter();
   const [activeCategory, setActiveCategory] = useState("featured");
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
@@ -69,12 +71,12 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-10"
         >
-          <span className="text-[#00f0ff] text-sm font-mono mb-4 block">
-            03 — Projects
+          <span className="text-[#00f0ff] text-sm font-mono mb-3 block">
+            03: Projects
           </span>
-          <h2 className="text-display mb-6">
+          <h2 className="text-display mb-4">
             Selected <span className="gradient-text">works</span>
           </h2>
           <p className="text-white/60 text-body-large max-w-2xl">
@@ -120,13 +122,14 @@ export default function Projects() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className={`project-card-animate project-card group relative ${
+                className={`project-card-animate project-card group relative cursor-pointer ${
                   project.featured && index === 0
                     ? "md:col-span-2 md:row-span-2"
                     : ""
                 }`}
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
+                onClick={() => router.push(`/projects/${project.slug}`)}
                 data-cursor-text="View"
               >
                 {/* Card Content */}
@@ -194,11 +197,12 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors icon-bounce"
                         data-cursor-text="GitHub"
                       >
                         <svg
-                          className="w-4 h-4"
+                          className="w-4 h-4 transition-transform"
                           fill="currentColor"
                           viewBox="0 0 24 24"
                         >

@@ -6,7 +6,7 @@ export const siteConfig = {
   email: "iamadarshgupta8@gmail.com",
   phone: "+91-9650946587",
   github: "https://github.com/CoolSunflower",
-  linkedin: "https://linkedin.com/in/adarshgupta",
+  linkedin: "https://linkedin.com/in/iamadarshgupta",
   location: "India",
 };
 
@@ -51,23 +51,6 @@ export const techStack = [
 export const experiences = [
   {
     id: 1,
-    company: "Fortune 500 Healthcare Company",
-    role: "AI & Full-Stack Engineer",
-    type: "Project",
-    period: "Aug 2025 - Current",
-    location: "Remote",
-    description:
-      "Building a social media listening platform analyzing 10K+ daily posts across X, Reddit, Instagram, and medical journals for real-time brand sentiment tracking.",
-    achievements: [
-      "Integrated fine-tuned LLM-based sentiment and relevancy models with dynamic filters for 200+ sub-brands",
-      "Developed role-based dashboard with user-level categorization, reporting, and export features",
-      "Cut project costs by 35% through serverless GPU and VPS infrastructure deployment",
-    ],
-    tech: ["Python", "LLMs", "React", "PostgreSQL", "AWS"],
-    color: "#00f0ff",
-  },
-  {
-    id: 2,
     company: "Uber",
     role: "Software Engineering Intern",
     type: "Full-time",
@@ -84,7 +67,7 @@ export const experiences = [
     color: "#ff6b35",
   },
   {
-    id: 3,
+    id: 2,
     company: "Uber",
     role: "UberSTAR Software Engineering Intern",
     type: "Internship",
@@ -100,11 +83,43 @@ export const experiences = [
     tech: ["Go", "Fx", "Glue", "Cadence", "Microservices"],
     color: "#a855f7",
   },
+  {
+    id: 3,
+    company: "[NDA] Fortune 500 Healthcare Company",
+    role: "AI & Full-Stack Engineer",
+    type: "Project",
+    period: "Aug 2025 - Current",
+    location: "Remote",
+    description:
+      "Building a social media listening platform analyzing 10K+ daily posts across X, Reddit, Instagram, and medical journals for real-time brand sentiment tracking.",
+    achievements: [
+      "Built an in-house social media listening platform monitoring brand mentions across social, news, and industry sites, replacing a third-party vendor and reducing annual costs by 89%.",
+      "Developed an NLP pipeline with language detection, neural MT (23 languages), rule-based AST brand classification (200+ sub-brands), and an SBERT + SVM relevancy model (AUC-ROC 0.97, Recall 0.99) optimized via ONNX.",
+      "Architected a Node.js/Express + Python/Flask microservices system with worker pools, ingestion queues, and Dockerized deployment on Azure App Service + Cosmos DB, with a React analytics dashboard for filtering, remediation, and insights.",
+    ],
+    tech: ["Python", "LLMs", "React", "Docker", "Azure"],
+    color: "#00f0ff",
+  },
 ];
 
 export const projects = [
   {
     id: 1,
+    title: "Lunar Superresolution",
+    subtitle: "InterIIT Tech Meet",
+    description:
+      "Applied GNNs and CNNs for deep spatial superresolution of lunar surface composition data from Chandrayaan-2.",
+    longDescription:
+      "Achieved subpixel resolution of <2km × 2km from original 12.5km × 100km inputs. Developed dynamic online optimization pipeline using Lagrangian and non-convex optimization heuristics.",
+    tech: ["Python", "PyTorch", "GNN", "CNN", "Optimization"],
+    period: "Nov 2024 - Dec 2024",
+    featured: true,
+    color: "#ff6b35",
+    category: "ml",
+    slug: "lunar-superresolution",
+  },
+  {
+    id: 2,
     title: "Hospital Management System",
     subtitle: "Full-Stack MERN Application",
     description:
@@ -117,20 +132,7 @@ export const projects = [
     featured: true,
     color: "#00f0ff",
     category: "fullstack",
-  },
-  {
-    id: 2,
-    title: "Lunar Superresolution",
-    subtitle: "InterIIT Tech Meet",
-    description:
-      "Applied GNNs and CNNs for deep spatial superresolution of lunar surface composition data from Chandrayaan-2.",
-    longDescription:
-      "Achieved subpixel resolution of <2km × 2km from original 12.5km × 100km inputs. Developed dynamic online optimization pipeline using Lagrangian and non-convex optimization heuristics.",
-    tech: ["Python", "PyTorch", "GNN", "CNN", "Optimization"],
-    period: "Nov 2024 - Dec 2024",
-    featured: true,
-    color: "#ff6b35",
-    category: "ml",
+    slug: "hmis",
   },
   {
     id: 3,
@@ -145,6 +147,7 @@ export const projects = [
     featured: true,
     color: "#22c55e",
     category: "ml",
+    slug: "zoionnet",
   },
   {
     id: 4,
@@ -157,9 +160,10 @@ export const projects = [
     tech: ["C", "OpenGL", "SDL2", "FreeType", "GLEW"],
     github: "https://github.com/CoolSunflower/AMacs",
     period: "Jun 2024 - Current",
-    featured: false,
+    featured: true,
     color: "#a855f7",
     category: "systems",
+    slug: "amacs",
   },
   {
     id: 5,
@@ -175,6 +179,7 @@ export const projects = [
     featured: false,
     color: "#f59e0b",
     category: "systems",
+    slug: "router-simulator",
   },
   {
     id: 6,
@@ -190,6 +195,7 @@ export const projects = [
     featured: false,
     color: "#ec4899",
     category: "systems",
+    slug: "microc-compiler",
   },
   {
     id: 7,
@@ -204,26 +210,48 @@ export const projects = [
     featured: false,
     color: "#06b6d4",
     category: "systems",
+    slug: "drone-controller",
   },
 ];
 
 export const publications = [
   {
     title:
+      "Attention-based spatiotemporal graph models for full-field acceleration reconstruction",
+    venue: "Japanese Journal of Applied Physics",
+    location: "Japan",
+    date: "2026",
+    status: "Published",
+    authors: "A. Gupta, S. K. Ayop, and A. Habib",
+    link: "https://iopscience.iop.org/article/10.35848/1347-4065/ae50eb",
+  },
+  {
+    title:
       "Attention-driven spatio-temporal graph networks for full-field acceleration prediction",
     venue: "46th Symposium on Ultrasonic Electronics (USE)",
     location: "Japan",
     date: "Nov 2025",
-    status: "Accepted",
+    status: "Presented",
     authors: "A. Gupta, S. Ojha, S. K. Ayop, and A. Habib",
+    link: "https://www.use-dl.org/2025/proceedings/pdf/2P2-8.pdf",
   },
   {
     title:
       "STSR-Net: Spatio-Temporal Graph Neural Network for Full-Field Structural Response Prediction",
-    venue: "ASME 52nd Annual Review of Progress in QNDE",
-    location: "Montreal, Canada",
+    venue: "ASME 52nd Annual Review of Progress in Quantitative Nondestructive Evaluation (QNDE2025)",
+    location: "Montreal, Quebec, Canada",
     date: "Jul 2025",
-    status: "Accepted",
+    status: "Presented",
+    authors: "A. Gupta, S. Ojha, S. K. Ayop, and A. Habib",
+  },
+  {
+    title:
+      "MMG-SLAM: Multimodal Visual SLAM with MambaVision Loops and Gaussian Splatting",
+    venue: "28th International Conference on Pattern Recognition (ICPR)",
+    location: "Lyon, France",
+    date: "2026",
+    status: "Submitted",
+    authors: "A. Bandyopadhyay, A. Gupta, A. Sur, and R. UP",
   },
   {
     title:
@@ -232,38 +260,49 @@ export const publications = [
     location: "Stanford, CA, USA",
     date: "Jun 2025",
     status: "Published",
+    authors: "A. Gupta, B. Mali, and C. Karfa",
     link: "https://arxiv.org/pdf/2506.13983",
   },
   {
     title:
       "Stacked Ensemble of Fine-Tuned CNNs for Knee Osteoarthritis Severity Grading",
-    venue: "IEEE 15th Annual UEMCON",
-    location: "IBM T.J. Watson Research Center, NY",
+    venue: "IEEE 15th Annual Ubiquitous Computing, Electronics & Mobile Communications Conference (UEMCON)",
+    location: "IBM T.J. Watson Research Center, New York, USA",
     date: "Oct 2024",
     status: "Published",
+    authors: "A. Gupta, J. Kaur, T. Doshi, T. Sharma, N. K. Verma, and S. Vasikarla",
+    link: "https://arxiv.org/abs/2511.22143",
   },
 ];
 
 export const research = [
   {
-    institution: "IIT Guwahati, Multimedia Lab",
-    role: "B. Tech Project",
-    period: "July 2025 – Current",
-    location: "India",
-  },
-  {
     institution: "UiT The Arctic University of Norway",
     role: "Research Intern",
     period: "Jan 2025 – Current",
     location: "Tromsø, Norway",
-    lab: "Acoustic Sensing and Imaging Lab",
+    lab: "ASI Lab (Acoustic Sensing and Imaging)",
+    description: "Developing spatio-temporal graph neural networks for structural health monitoring, integrating spectral and attention mechanisms to reconstruct dynamic acceleration fields.",
+    skills: ["PyTorch", "Signal Processing", "GNNs", "Academic Research"],
   },
   {
     institution: "IIT Guwahati",
-    role: "Research Assistant",
-    period: "July 2025 – Current",
+    role: "Undergraduate Research Assistant",
+    period: "Dec 2023 – Current",
     location: "India",
     advisor: "Dr. Teena Sharma",
+    lab: "Biomedical Data Inequality",
+    description: "Enhanced cancer survival prediction accuracy for underrepresented groups through deep transfer learning, utilizing large-scale experimentation on HPC clusters to optimize model generalization and fairness.",
+    skills: ["PyTorch", "HPC", "Transfer Learning", "Healthcare ML"],
+  },
+  {
+    institution: "IIT Guwahati",
+    role: "B. Tech Project",
+    period: "July 2025 – Current",
+    location: "India",
+    lab: "Multimedia Lab",
+    description: "Working on multimodal SLAM algorithms integrating visual and auxiliary sensor data for more robust localization and mapping. Designing optimized fusion models to improve accuracy, efficiency, and adaptability in real-world robotic environments.",
+    skills: ["SLAM", "Robot Perception", "Deep Learning"],
   },
 ];
 

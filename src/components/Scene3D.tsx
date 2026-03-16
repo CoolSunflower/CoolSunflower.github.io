@@ -210,7 +210,7 @@ export default function Scene3D() {
       >
         <ambientLight intensity={0.5} />
         <CameraRig />
-        <ParticleField />
+        {/* <ParticleField /> */}
         {/* <FloatingGeometry />
         <FloatingTorus />
         <FloatingOctahedron /> */}

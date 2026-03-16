@@ -1,0 +1,51 @@
+---
+title: MicroC Compiler
+subtitle: Compiler Front-End Implementation
+description: Compiler front-end for MicroC using Flex and Bison, with TAC and Quadruple code generation.
+longDescription: Implemented a compiler front-end for MicroC using Flex (lexical analysis) and Bison (parsing). Added support for data types, operators, control flow, functions, pointers, and arrays with scoped symbol tables.
+category: systems
+tech:
+  - Flex
+  - Bison
+  - C
+  - Compilers
+period: Apr 2025
+featured: false
+color: "#ec4899"
+github: https://github.com/CoolSunflower/TAC-for-uC
+order: 6
+---
+
+## Overview
+
+A complete compiler front-end implementation for the MicroC language, demonstrating compiler construction principles.
+
+## Features
+
+### Lexical Analysis (Flex)
+- Token recognition for keywords, identifiers, literals
+- Error reporting with line numbers
+- Comment handling
+
+### Parsing (Bison)
+- Context-free grammar implementation
+- Abstract Syntax Tree (AST) generation
+- Semantic analysis
+
+### Symbol Table
+- Scoped symbol management
+- Type checking
+- Function and variable declarations
+
+### Code Generation
+- Three-Address Code (TAC) generation
+- Quadruple representation
+- Enables low-level program analysis
+
+## Supported Language Features
+
+- Data types: int, float, char
+- Control flow: if-else, while, for
+- Functions with parameters
+- Pointers and arrays
+- Arithmetic and logical operators
