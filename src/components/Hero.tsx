@@ -122,11 +122,11 @@ export default function Hero() {
                 </span>
               ))}
             </span>
-            <span className="block overflow-hidden gradient-text">
+            <span className="block overflow-hidden">
               {lastName.split("").map((char, i) => (
                 <span
                   key={`last-${i}`}
-                  className="char inline-block"
+                  className="char inline-block gradient-text"
                   style={{ transformStyle: "preserve-3d" }}
                 >
                   {char}
