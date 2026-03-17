@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     "Full-stack engineer building at the intersection of systems and scale. From embedded wildlife sensors to cloud-scale microservices.",
   keywords: [
     "Adarsh Gupta",
+    "adarsh.gupta@iitg.ac.in",
+    "iamadarshgupta8@gmail.com",
+    "9650946587",
     "Software Engineer",
     "Full-Stack Developer",
     "IIT Guwahati",
@@ -34,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://adarshgupta.dev",
+    url: "https://coolsunflower.github.io",
     title: "Adarsh Gupta | Software Engineer & Researcher",
     description:
       "Full-stack engineer building at the intersection of systems and scale.",
@@ -49,6 +52,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  verification: {
+    google: "unNDPeXEuzSXG0Pzubv33tlAr-Wx0ByBTqNVxQQrqCo",
   },
 };
 
